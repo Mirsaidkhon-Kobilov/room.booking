@@ -6,7 +6,9 @@ final class Router
 {
     //свойство для хранения маршрутов
     static private $routes=[
-        '/'=>'controllers/index.php', //controllers/index.php ещё не создан
+        '/'=>'./controllers/index.php',
+        '/result'=>'./controllers/result.php',
+        '/auth'=>'./controllers/auth.php',
     ];
 
     //метод для вызова нужного контроллера
@@ -30,6 +32,6 @@ final class Router
 
         http_response_code($code);
 
-        require "view/{$code}.php"; //view/404.php ещё не создан
+        require "./controllers/{$code}.php";
     }
 }
