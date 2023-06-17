@@ -8,11 +8,7 @@ $startTime=$_POST['startTime'].':00';
 $endTime=$_POST['endTime'].':00';
 
 //сохраняем данные из формы в COOKIE на будущее
-setcookie("floorNum",$_POST['floorNum'],time()+3600*24*7);
-setcookie("roomNum",$_POST['roomNum'],time()+3600*24*7);
-setcookie("date",$_POST['date'],time()+3600*24*7);
-setcookie("startTime",$_POST['startTime'],time()+3600*24*7);
-setcookie("endTime",$_POST['endTime'],time()+3600*24*7);
+Model\User::setFormData($floorNum,$roomNum,$date,$startTime,$endTime);
 
 // запрос для проверки существует ли бронь
 // которая пересекается со временем указанным пользователем

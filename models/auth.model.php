@@ -38,9 +38,8 @@ if (!empty($_GET['code'])) {
         $info = file_get_contents('https://www.googleapis.com/oauth2/v1/userinfo?' . urldecode(http_build_query($params)));
         $info = json_decode($info, true);
 
-        $login=1;
-        setcookie("email", $info["email"], time()+3600*24*7);
-        setcookie("name", $info["name"], time()+3600*24*7);
+        //записываем данные пользователя после авторизации
+        Model\User::setNameAndEmail($info["name"], $info["email"]);
     }
 }
 else{

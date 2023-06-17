@@ -11,7 +11,7 @@
 <div>
     <p>Комната забронирована!:</p>
     <p>В период времени:</p>
-    <p style="color: crimson"><?php echo $_COOKIE["startTime"],' - ',$_COOKIE["endTime"]; ?></p>
+    <p style="color: crimson"><?php echo Model\User::get('startTime'),' - ',Model\User::get('endTime'); ?></p>
 </div>
 <style>
     div{

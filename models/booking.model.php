@@ -1,12 +1,13 @@
 <?php
+use Model\User;
 
 // подготовим данные для INSERT запроса
-$name=$_COOKIE['name'];
-$floorNum=$_COOKIE['floorNum'];
-$roomNum=$_COOKIE['roomNum'];
-$date=$_COOKIE['date'];
-$startTime=$_COOKIE['startTime'];
-$endTime=$_COOKIE['endTime'];
+$name=User::get('name');
+$floorNum=User::get('floorNum');
+$roomNum=User::get('roomNum');
+$date=User::get('date');
+$startTime=User::get('startTime');
+$endTime=User::get('endTime');
 
 // INSERT запрос
 $query="INSERT INTO `booking` (`id`, `floor_num`, `room_num`, `date`, 
