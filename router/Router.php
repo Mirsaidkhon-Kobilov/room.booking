@@ -5,14 +5,15 @@ namespace Router;
 final class Router
 {
     //свойство для хранения маршрутов
-    static private $routes=[
+    static private $routes=
+        [
         '/'=>'./controllers/index.php',
-        '/result'=>'./controllers/result.php',
-        '/auth'=>'./controllers/auth.php',
-    ];
+        '/check'=>'./controllers/checkStatus.php',
+        ];
 
     //метод для вызова нужного контроллера
-    static function dispatch($uri){
+    static function dispatch($uri)
+    {
 
         //парсим URI и оставим только путь
         $path=parse_url($uri)['path'];
@@ -28,7 +29,8 @@ final class Router
     }
 
     //метод отправки ошибки с нужным кодом
-    static function printError($code=404){
+    static function printError($code=404)
+    {
 
         http_response_code($code);
 

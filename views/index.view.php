@@ -14,10 +14,12 @@ $url = 'https://accounts.google.com/o/oauth2/auth?' . urldecode(http_build_query
     <title>Room Booking</title>
 </head>
 <body>
+<div>
     <img src="./public/img/google-logo.png">
     <?php
     echo '<a href="' . $url . '">Авторизация через Google</a>';
     ?>
+</div>
     <style>
         img{
             position: absolute;
@@ -29,7 +31,15 @@ $url = 'https://accounts.google.com/o/oauth2/auth?' . urldecode(http_build_query
             position: absolute;
             font-size: 28px;
             top: 55%;
-            left: 40%;
+            left: 25%;
+        }
+        div{
+            position: absolute;
+            height: 60%;
+            width: 40%;
+            top: 20%;
+            left: 30%;
+            background-color: darksalmon;
         }
     </style>
 </body>

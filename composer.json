@@ -2,7 +2,7 @@
   "autoload": {
     "psr-4": {
       "Router\\": "router/",
-      "Controller\\": "controllers/"
+      "Model\\": "models/"
     }
   }
 }

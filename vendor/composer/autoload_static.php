@@ -11,9 +11,9 @@ class ComposerStaticInit80ba8a86b67376ab3289dfae69afb8a7
         array (
             'Router\\' => 7,
         ),
-        'C' => 
+        'M' => 
         array (
-            'Controller\\' => 11,
+            'Model\\' => 6,
         ),
     );
 
@@ -22,9 +22,9 @@ class ComposerStaticInit80ba8a86b67376ab3289dfae69afb8a7
         array (
             0 => __DIR__ . '/../..' . '/router',
         ),
-        'Controller\\' => 
+        'Model\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/controllers',
+            0 => __DIR__ . '/../..' . '/models',
         ),
     );
 

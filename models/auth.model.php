@@ -1,10 +1,5 @@
 <?php
 
-//создаём объект класса Авторизацция, для хранения данных
-if(!isset($session)) {
-    $session = new \Controller\Authorization();
-}
-
 //проверяем авторизован ли пользователь
 if (!empty($_GET['code'])) {
     // если да то
@@ -12,7 +7,7 @@ if (!empty($_GET['code'])) {
     $params = array(
         'client_id'     => '392383151749-1jre7ef4r88ttgknk9nqmki352dvtf7r.apps.googleusercontent.com',
         'client_secret' => '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',
-        'redirect_uri'  => 'http://localhost/auth',
+        'redirect_uri'  => 'http://localhost',
         'grant_type'    => 'authorization_code',
         'code'          => $_GET['code']
     );
@@ -43,7 +38,9 @@ if (!empty($_GET['code'])) {
         $info = file_get_contents('https://www.googleapis.com/oauth2/v1/userinfo?' . urldecode(http_build_query($params)));
         $info = json_decode($info, true);
 
-        $session->login($info);
+        $login=1;
+        setcookie("email", $info["email"], time()+3600*24*7);
+        setcookie("name", $info["name"], time()+3600*24*7);
     }
 }
 else{
@@ -51,18 +48,10 @@ else{
     //задаём начальные значания, которые нужны для начала авторизации
     $params = array(
         'client_id'     => '392383151749-1jre7ef4r88ttgknk9nqmki352dvtf7r.apps.googleusercontent.com',
-        'redirect_uri'  => 'http://localhost/auth',
+        'redirect_uri'  => 'http://localhost',
         'response_type' => 'code',
         'scope'         => 'https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile',
         'state'         => '123'
     );
-}
 
-//авторизовванный пользователь перейдёт на страницу с формой
-//не авторизовванный пользователь вернётся к началу
-if($session->getLoginStatus()) {
-    require 'form.php';
-}
-else{
-    require './views/index.view.php';
 }
