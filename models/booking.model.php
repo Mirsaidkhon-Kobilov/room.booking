@@ -1,7 +1,7 @@
 <?php
 use Model\User;
 
-// подготовим данные для INSERT запроса
+// подготовим данные для INSERT запрос
 $name=User::get('name');
 $floorNum=User::get('floorNum');
 $roomNum=User::get('roomNum');
