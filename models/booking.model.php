@@ -1,13 +1,13 @@
 <?php
-use Model\User;
+use Model\Booking;
 
 // подготовим данные для INSERT запрос
-$name=User::get('name');
-$floorNum=User::get('floorNum');
-$roomNum=User::get('roomNum');
-$date=User::get('date');
-$startTime=User::get('startTime');
-$endTime=User::get('endTime');
+$name=$_COOKIE['name'];
+$floorNum=Booking::get('floorNum');
+$roomNum=Booking::get('roomNum');
+$date=Booking::get('date');
+$startTime=Booking::get('startTime');
+$endTime=Booking::get('endTime');
 
 // INSERT запрос
 $query="INSERT INTO `booking` (`id`, `floor_num`, `room_num`, `date`, 
@@ -22,4 +22,4 @@ $database->insert($query);
 // на @gmail через который он авторизовался
 $mailHead='Кабинет Забронирован!';
 $message="Добрый день! Вы забронировали кабинет $floorNum-$roomNum в период времени от $startTime до $endTime, $date числа.";
-mail($_COOKIE["email"],$mailHead,$message);
+mail($_COOKIE['email'],$mailHead,$message);

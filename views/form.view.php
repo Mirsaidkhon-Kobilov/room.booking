@@ -66,12 +66,10 @@
         left: 70%;
         top: 17.5%;
     }
-
-    }
     button{
         position: absolute;
         height: 7%;
-        width: 25%;
+        width: 28%;
         left: 60%;
         top: 80%;
     }

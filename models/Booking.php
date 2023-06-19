@@ -2,23 +2,14 @@
 
 namespace Model;
 
-class User
+class Booking
 {
-    // все данные касающиеся текущего пользователя
-    static private $name;
-    static private $email;
+    // все данные из формы
     static private $floorNum;
     static private $roomNum;
     static private $date;
     static private $startTime;
     static private $endTime;
-
-    // метод для запоминания Имени и Почты пользователя
-    static function setNameAndEmail($name,$email)
-    {
-        self::$name=$name;
-        self::$email=$email;
-    }
 
     // метод для запоминания данных из Формы
     // заполненной пользоввателем

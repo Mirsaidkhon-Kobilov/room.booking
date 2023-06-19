@@ -8,7 +8,7 @@ $startTime=$_POST['startTime'].':00';
 $endTime=$_POST['endTime'].':00';
 
 //сохраняем данные из формы в COOKIE на будущее
-Model\User::setFormData($floorNum,$roomNum,$date,$startTime,$endTime);
+Model\Booking::setFormData($floorNum,$roomNum,$date,$startTime,$endTime);
 
 // запрос для проверки существует ли бронь
 // которая пересекается со временем указанным пользователем

@@ -39,7 +39,8 @@ if (!empty($_GET['code'])) {
         $info = json_decode($info, true);
 
         //записываем данные пользователя после авторизации
-        Model\User::setNameAndEmail($info["name"], $info["email"]);
+        setcookie('name',$info["name"],time()+1800);
+        setcookie('email',$info["email"],time()+1800);
     }
 }
 else{

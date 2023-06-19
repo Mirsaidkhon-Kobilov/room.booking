@@ -11,7 +11,7 @@
 <div>
     <p>Комната забронирована!:</p>
     <p>В период времени:</p>
-    <p style="color: crimson"><?php echo Model\User::get('startTime'),' - ',Model\User::get('endTime'); ?></p>
+    <p style="color: crimson"><?php echo Model\Booking::get('startTime'),' - ',Model\Booking::get('endTime'); ?></p>
 </div>
 <style>
     div{
